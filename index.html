@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Eres Amsi o ne? 💖 ¡Feliz Cumpleaños!</title>
+  <!-- Google Fonts: Pixel Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Elementos de audio ocultos -->
+  <audio id="audioCepillin" src="cancionesWeb/CepillinCumple.opus" preload="auto"></audio>
+  <audio id="audioOpening" src="cancionesWeb/Opening.opus" preload="auto"></audio>
+
+  <!-- Partículas flotantes de fondo y confeti -->
+  <div class="pixel-bg-decorations" id="pixelBg"></div>
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <div class="game-container">
+
+    <!-- SCREEN 1: PREGUNTA PRINCIPAL -->
+    <section id="screen-intro" class="screen active">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> PLAYER: AMSI?</span>
+        <span class="hud-item">LEVEL 1-1</span>
+      </div>
+
+      <div class="pixel-box main-box">
+        <div class="pixel-character-container">
+          <div class="pixel-heart-sprite"></div>
+        </div>
+
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="typewriterText1"></p>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btnYes1" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> ¡Sí soy!
+          </button>
+          
+          <button id="btnNo1" class="pixel-btn btn-no">
+            <span class="btn-icon">✖</span> No (Advertencia no tocar o acabarás muerto uwu)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: CONFIRMACIÓN DE FOTO -->
+    <section id="screen-confirm-photo" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> VERIFYING IDENTITY</span>
+        <span class="hud-item">LEVEL 1-2</span>
+      </div>
+
+      <div class="pixel-box photo-confirm-box">
+        <div class="pixel-photo-container">
+          <div class="pixel-photo-frame">
+            <img id="amsiPhoto" src="fotosAmsi/Amsi1.webp" alt="Foto de Amsi">
+          </div>
+        </div>
+
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="typewriterText2"></p>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btnYes2" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> ¡Sí, soy esta mera! 💖
+          </button>
+          
+          <button id="btnNo2" class="pixel-btn btn-no">
+            <span class="btn-icon">✖</span> No, no soy 🙈
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: CEPILLÍN (10 SECONDS WAIT -> BOTÓN PUEBLO) -->
+    <section id="screen-cepillin" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> HAPPY BIRTHDAY!</span>
+        <span class="hud-item">MUSIC: CEPILLIN</span>
+      </div>
+
+      <div class="pixel-box cepillin-box">
+        <div class="pixel-character-container">
+          <div class="pixel-cake-sprite">
+            <div class="candle-flame"></div>
+          </div>
+        </div>
+
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="cepillinText"></p>
+        </div>
+
+        <div class="buttons-container hidden" id="cepillinButtonContainer">
+          <button id="btnPueblo" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> Mejor ya vamos a poner la favorita del pueblo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: FOTOS DE AMSI & MENSAJE CHIWIS -->
+    <section id="screen-photos-chiwis" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> LA MAS PRECIOSA DE MORELIA</span>
+        <span class="hud-item">MUSIC: OPENING 🎵</span>
+      </div>
+
+      <div class="pixel-box photos-box">
+        <div class="pixel-header">
+          <h1 class="pixel-title">¡LA MÁS PRECIOSA DE MORELIA! 👑✨</h1>
+        </div>
+
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="chiwisText"></p>
+        </div>
+
+        <div class="pixel-card photo-gallery-card">
+          <div class="gallery-title">📸 ÁLBUM EXCLUSIVO DE AMSI</div>
+          
+          <div class="pixel-photo-frame gallery-frame">
+            <img id="galleryImg" src="fotosAmsi/Amsi3.webp" alt="Foto de Amsi">
+          </div>
+
+          <div class="gallery-controls">
+            <button id="btnPrevPhoto" class="pixel-btn-sm">◄ Anter</button>
+            <span id="photoIndexText" class="photo-index-label">1 / 8</span>
+            <button id="btnNextPhoto" class="pixel-btn-sm">Siguiente ►</button>
+          </div>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btnWhatIsNext" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> Vamos a ver que falta
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: TOP 5 COSAS QUE ME RECUERDAN A TI -->
+    <section id="screen-top5-recuerdan" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> TOP 5 SPECIAL</span>
+        <span class="hud-item">LEVEL 1-5</span>
+      </div>
+
+      <div class="pixel-box top5-box">
+        <div class="pixel-header">
+          <h1 class="pixel-title">Top 5 cosas que me recuerdan a ti 💭💖</h1>
+        </div>
+
+        <div class="pixel-card top5-card">
+          <div class="top5-badge" id="top5Badge">#1</div>
+          
+          <div class="pixel-photo-frame top5-frame">
+            <img id="top5Img" src="fotosAmsi/recuerdanAti.webp" alt="Top 1 me recuerda a ti">
+          </div>
+
+          <div class="gallery-controls">
+            <button id="btnPrevTop5" class="pixel-btn-sm">◄ Anter</button>
+            <span id="top5IndexText" class="photo-index-label">TOP 1 / 5</span>
+            <button id="btnNextTop5" class="pixel-btn-sm">Siguiente ►</button>
+          </div>
+        </div>
+
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="recuerdanMessageText"></p>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btnToFinal" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> Vamos a leer
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 6: CARTA DE DAVIDD (EXCLUSIVA) -->
+    <section id="screen-letter" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> CARTA ESPECIAL</span>
+        <span class="hud-item">LEVEL 1-6</span>
+      </div>
+
+      <div class="pixel-box letter-box">
+        <div class="pixel-header">
+          <h1 class="pixel-title">💌 UNA CARTA PARA TI 💌</h1>
+          <p class="pixel-subtitle">De parte de Davidd para Amsi</p>
+        </div>
+
+        <!-- Carta Pixel Art -->
+        <div class="pixel-paper-card">
+          <div class="paper-header-decoration">
+            <span class="pixel-star">★</span>
+            <span class="paper-title-tag">CON TODO MI AMOR</span>
+            <span class="pixel-star">★</span>
+          </div>
+
+          <div class="paper-body">
+            <p class="full-letter-text">
+              Amsi, mi Toilet, mi trata perras, mi chiwis, mi piko, mi femboy, mi chaparrita, mi niña guapota, mi niña preciosa, mi lov, mi corazon, mi amor, mi locura.<br><br>
+
+              Agradezo poder enserio haberte conocido de una manera tan rara y original como andar ambos emperrados con el gobierno HAHA, dioss<br><br>
+
+              Agradezco haberme vuelto tu amigo, tu confidente, tu persona de confianza durante un buen tiempo y aunque haya habido tropiezos y funas de por medio, poder seguir aca contigo y con los demas.<br><br>
+
+              Agradezo poder a pesar de todo lo que te haya pasado, saber que mi corazonsito ya tiene 18 años, ya es toda una señorita hermosa y ya va a pagar impuestos y sufrir como su novio (Proyectada), me encanta el hecho de poder a pesar de todo, sostenerte lo que pueda, escucharte lo que pueda, apoyarte en lo que pueda, hablarte lo que pueda, decir pendejadas contigo en lo que pueda y escuchar tu risa toda loca que me encanta mi amorsito HAHAHA, aunque seas tu cagandote de risa por que el pobre de tu papa se chingo la rodilla cuando se callo.<br><br>
+
+              Bueno ya JAJAJA, el chiste aca es que, de verdad te amo mi niña &lt;3<br><br>
+
+              No importa cuanto parezca a veces que no pienso en ti, tu enserio sigues siempre en mi memoria y siempre lo haces &lt;333<br><br>
+
+              No importa que tengas inseguridades, miedos o mil cosas segun tu, asi mero te quiero justo como estas ahorita mismo leyendo esta carta mi corazonsito de melon, no pude haber deseado a alguien tan divertida y original como tu &lt;3333<br><br>
+
+              No me importa tu peso, tu estatura, tu color de piel ni nada de eso, aqui estare para ti siempre<br><br>
+
+              Eres mia, soy tuyo<br>
+              Te ries, yo tambien<br>
+              Te sientes mal, me siento mal<br>
+              Te lastimas, yo me lastimo &lt;\3<br>
+              Eres feliz y yo lo sere, eso me da paz<br><br>
+
+              Asi que, esto era lo que te queria decir corazonsote, te amo justito tal y como eres, por favor nunca cambies &lt;3333<br><br>
+
+              <strong>Atte: Tu pareja, Davidd</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="buttons-container">
+          <button id="btnToFlower" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> Ver sorpresa de flores 🌸
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 7: PANTALLA EXCLUSIVA DEL RAMO DE FLORES -->
+    <section id="screen-flower-bouquet" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> UN REGALO PARA TI</span>
+        <span class="hud-item">LEVEL 1-7</span>
+      </div>
+
+      <div class="pixel-box flower-box">
+        <div class="pixel-header">
+          <h1 class="pixel-title">🌸 UN RAMO PARA MI NIÑA PRECIOSA 🌸</h1>
+        </div>
+
+        <!-- Mensaje de las flores -->
+        <div class="pixel-dialogue">
+          <p class="dialogue-text" id="flowerMessageText"></p>
+        </div>
+
+        <!-- Ramo de Flores Pixel Art Rosa Pastel Detallado -->
+        <div class="pixel-bouquet-card">
+          <div class="pixel-bouquet-container">
+            <img src="ramo_flores.svg" alt="Ramo de Flores Pixel Art Detallado" class="pixel-bouquet-img">
+          </div>
+          <p class="bouquet-caption">🌸 RAMO DE FLORES PARA AMSI 🌸</p>
+        </div>
+
+        <!-- Botón para avanzar al Gran Final -->
+        <div class="buttons-container">
+          <button id="btnToFinalGrand" class="pixel-btn btn-yes">
+            <span class="btn-icon">▶</span> Ahora si el final
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 8: GRAN FINALE (FIN DEL JUEGO SIN BOTÓN DE REGRESO NI LOVE METER) -->
+    <section id="screen-welcome" class="screen hidden">
+      <div class="pixel-hud">
+        <span class="hud-item"><span class="heart-icon">♥</span> AMSI & DAVIDD FOREVER</span>
+        <span class="hud-item">HP: ∞</span>
+      </div>
+
+      <div class="pixel-box final-grand-box">
+        <div class="pixel-character-container">
+          <div class="pixel-heart-sprite big-glow-heart"></div>
+        </div>
+
+        <div class="pixel-header">
+          <h1 class="pixel-title grand-title">TE AMO AMSIII PRECIOSA AMORRRR &lt;333</h1>
+          <p class="pixel-subtitle">¡Eres lo más lindo del universo entero!</p>
+        </div>
+
+        <div class="pixel-card grand-celebration-card">
+          <div class="celebration-icon-row">
+            <span>🎉</span> <span>🎂</span> <span>💖</span> <span>👑</span> <span>✨</span>
+          </div>
+          <p class="letter-text" style="text-align: center;">
+            ¡Gracias por ser la mejor novia del mundo!<br>
+            ¡Feliz Cumpleaños Amsi! 🌸🎂✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Audio Toggle -->
+  <div class="sound-toggle-container">
+    <button id="musicToggle" class="pixel-btn-sm">🎵 Música: ON</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

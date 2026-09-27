@@ -1,0 +1,106 @@
+<svg width="240" height="240" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Fondo transparente -->
+  <rect x="0" y="0" width="48" height="48" fill="none"/>
+  
+  <!-- TALLOS Y ENVOLTURA INFERIOR (NEGRO Y BLANCO HUESO) -->
+  <path d="M21 32h6v14h-6z" fill="#110f15"/>
+  <path d="M22 33h4v12h-4z" fill="#f7f4ea"/>
+  <path d="M23 34h2v10h-2z" fill="#e0d9c4"/>
+
+  <!-- PAPEL DE CONO Y ENVOLTURA DEL RAMO -->
+  <!-- Contorno papel -->
+  <path d="M12 24h24v10h-24z" fill="#f7f4ea"/>
+  <path d="M12 24h24v2h-24z" fill="#110f15"/>
+  <path d="M12 33h24v1h-24z" fill="#110f15"/>
+  <path d="M11 24h1v10h-1z" fill="#110f15"/>
+  <path d="M36 24h1v10h-1z" fill="#110f15"/>
+  <path d="M14 26h20v6h-20z" fill="#fffdf7"/>
+  <path d="M15 28h18v2h-18z" fill="#f7f4ea"/>
+
+  <!-- MOÑO Y LAZO (ROSA PASTEL CON SOMBRAS) -->
+  <path d="M17 29h14v4h-14z" fill="#ffb7c5"/>
+  <path d="M17 29h14v1h-14z" fill="#110f15"/>
+  <path d="M17 32h14v1h-14z" fill="#110f15"/>
+  <path d="M15 30h3v6h-3z" fill="#d88998"/>
+  <path d="M30 30h3v6h-3z" fill="#d88998"/>
+  <path d="M15 30h1v6h-1z" fill="#110f15"/>
+  <path d="M32 30h1v6h-1z" fill="#110f15"/>
+  <path d="M22 30h4v3h-4z" fill="#ffdbe2"/>
+  <path d="M23 31h2v1h-2z" fill="#fffdf7"/>
+
+  <!-- FLORES PIXEL ART DETALLADAS -->
+  
+  <!-- ROSA 1: CENTRO SUPERIOR -->
+  <path d="M19 4h10v10h-10z" fill="#ffb7c5"/>
+  <path d="M20 3h8v1h-8z" fill="#110f15"/>
+  <path d="M20 14h8v1h-8z" fill="#110f15"/>
+  <path d="M18 5h1v8h-1z" fill="#110f15"/>
+  <path d="M29 5h1v8h-1z" fill="#110f15"/>
+  <!-- Detalles/Pétalos interiores Rosa 1 -->
+  <path d="M21 6h6v6h-6z" fill="#ffdbe2"/>
+  <path d="M22 7h4v4h-4z" fill="#ffb7c5"/>
+  <path d="M23 8h2v2h-2z" fill="#fffdf7"/>
+
+  <!-- ROSA 2: IZQUIERDA ARRIBA -->
+  <path d="M8 10h10v10h-10z" fill="#ffdbe2"/>
+  <path d="M9 9h8v1h-8z" fill="#110f15"/>
+  <path d="M9 20h8v1h-8z" fill="#110f15"/>
+  <path d="M7 11h1v8h-1z" fill="#110f15"/>
+  <path d="M18 11h1v8h-1z" fill="#110f15"/>
+  <!-- Detalles pétalos Rosa 2 -->
+  <path d="M10 12h6v6h-6z" fill="#ffb7c5"/>
+  <path d="M11 13h4v4h-4z" fill="#d88998"/>
+  <path d="M12 14h2v2h-2z" fill="#fffdf7"/>
+
+  <!-- ROSA 3: DERECHA ARRIBA -->
+  <path d="M30 10h10v10h-10z" fill="#ffdbe2"/>
+  <path d="M31 9h8v1h-8z" fill="#110f15"/>
+  <path d="M31 20h8v1h-8z" fill="#110f15"/>
+  <path d="M29 11h1v8h-1z" fill="#110f15"/>
+  <path d="M40 11h1v8h-1z" fill="#110f15"/>
+  <!-- Detalles pétalos Rosa 3 -->
+  <path d="M32 12h6v6h-6z" fill="#ffb7c5"/>
+  <path d="M33 13h4v4h-4z" fill="#d88998"/>
+  <path d="M34 14h2v2h-2z" fill="#fffdf7"/>
+
+  <!-- ROSA 4: CENTRO ABAJO -->
+  <path d="M19 15h10v10h-10z" fill="#ffb7c5"/>
+  <path d="M20 14h8v1h-8z" fill="#110f15"/>
+  <path d="M20 25h8v1h-8z" fill="#110f15"/>
+  <path d="M18 16h1v8h-1z" fill="#110f15"/>
+  <path d="M29 16h1v8h-1z" fill="#110f15"/>
+  <!-- Detalles pétalos Rosa 4 -->
+  <path d="M21 17h6v6h-6z" fill="#ffdbe2"/>
+  <path d="M22 18h4v4h-4z" fill="#ffb7c5"/>
+  <path d="M23 19h2v2h-2z" fill="#fffdf7"/>
+
+  <!-- PEQUEÑOS BOTONES Y FLORES LATERALES -->
+  <!-- Florcita izquierda baja -->
+  <path d="M3 16h5v5h-5z" fill="#ffb7c5"/>
+  <path d="M4 15h3v1h-3z" fill="#110f15"/>
+  <path d="M4 21h3v1h-3z" fill="#110f15"/>
+  <path d="M2 17h1v3h-1z" fill="#110f15"/>
+  <path d="M8 17h1v3h-1z" fill="#110f15"/>
+  <path d="M5 18h1v1h-1z" fill="#fffdf7"/>
+
+  <!-- Florcita derecha baja -->
+  <path d="M40 16h5v5h-5z" fill="#ffb7c5"/>
+  <path d="M41 15h3v1h-3z" fill="#110f15"/>
+  <path d="M41 21h3v1h-3z" fill="#110f15"/>
+  <path d="M39 17h1v3h-1z" fill="#110f15"/>
+  <path d="M45 17h1v3h-1z" fill="#110f15"/>
+  <path d="M42 18h1v1h-1z" fill="#fffdf7"/>
+
+  <!-- DECORACIONES Y DESTELLOS PIXEL (SPARKLES) -->
+  <path d="M5 5h3v3h-3z" fill="#ffb7c5"/>
+  <path d="M6 6h1v1h-1z" fill="#fffdf7"/>
+  
+  <path d="M40 5h3v3h-3z" fill="#ffb7c5"/>
+  <path d="M41 6h1v1h-1z" fill="#fffdf7"/>
+
+  <path d="M14 2h2v2h-2z" fill="#ffdbe2"/>
+  <path d="M32 2h2v2h-2z" fill="#ffdbe2"/>
+
+  <path d="M2 28h2v2h-2z" fill="#ffdbe2"/>
+  <path d="M44 28h2v2h-2z" fill="#ffdbe2"/>
+</svg>
